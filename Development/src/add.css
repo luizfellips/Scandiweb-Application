@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* header */
+
+header h1 {
+    padding: 15px;
+    border-bottom: 1px black solid;
+}
+
+header .button-group {
+    height: 20px;
+    position: absolute;
+    top: 47px;
+    right: 100px;
+}
+
+header button {
+    font-size: 18px;
+    padding: 5px;
+    margin-right: 10px;
+}
+/* div separation */
+
+.row {
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.col.inputs{
+    margin: -6px;
+}
+
+/* forms */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px;
+
+}
+input{
+    margin: 10px;
+    width: 15em;
+
+
+}
+
+.fieldbox {
+    display: none;
+}
