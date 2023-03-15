@@ -48,8 +48,3 @@ abstract class Product{
 
     abstract public function Save();
 }
-
-
-
-
-?>
