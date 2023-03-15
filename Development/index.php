@@ -51,8 +51,8 @@ try {
     <header>
         <h1>Product List</h1>
         <div class="button-group">
-            <a href="add-product.php"><button>Add</button></a>
-            <button id="delete-product-btn">Mass delete</button>
+            <a href="add-product.php"><button>ADD</button></a>
+            <button id="delete-product-btn">MASS DELETE</button>
         </div>
     </header>
 
