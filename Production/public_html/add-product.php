@@ -137,6 +137,10 @@ if (isset($_POST['sku']) && isset($_POST['name']) && isset($_POST['price']) && i
             
         </div>
     </form>
+    
+    <footer>
+        Scandiweb Test Assignment
+    </footer>
 </body>
 
 
