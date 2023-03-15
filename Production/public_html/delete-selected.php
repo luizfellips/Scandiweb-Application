@@ -20,4 +20,3 @@ if (isset($_POST['skus'])) {
 else {
     echo 'not set';
 }
-?>
