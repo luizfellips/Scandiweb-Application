@@ -12,7 +12,7 @@
 
 <body>
 
-    <form action="add-product.php" method="post" id="product-form">
+    <form action="add-product.php" method="post" id="product_form">
         <header>
             <h1>Product List</h1>
             <div class="button-group">
