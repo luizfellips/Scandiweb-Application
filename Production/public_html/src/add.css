@@ -59,3 +59,9 @@ input{
 .fieldbox {
     display: none;
 }
+
+footer {
+    border-top: 1px black solid;
+    text-align: center;
+    padding: 10px;
+}
