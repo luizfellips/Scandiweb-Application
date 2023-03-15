@@ -1,7 +1,9 @@
 # Scandiweb Application Test Project
 
+Simple and direct application designed for evaluation.
+
 ## Concepts used
-- General O.O.P
+- O.O.P
 - P.D.O
 - PHP
 - MySQL
