@@ -70,4 +70,3 @@ class Furniture extends Product
     }
 }
 
-?>
