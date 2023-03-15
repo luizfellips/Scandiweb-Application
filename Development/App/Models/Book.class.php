@@ -40,5 +40,3 @@ class Book extends Product
     }
 
 }
-
-?>
