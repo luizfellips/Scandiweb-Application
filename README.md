@@ -1,6 +1,6 @@
 # Scandiweb Application Test Project
 
-Simple and direct application designed for evaluation.
+Simple and direct application designed for evaluation of programming principles and overall back-end design.
 
 ## Concepts used
 - O.O.P
