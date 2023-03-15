@@ -9,7 +9,7 @@
 - JQuery
 
 Live app:
-https://scandproject.000webhostapp.com/
+[Scandiweb Application](https://scandproject.000webhostapp.com/)
 
 - My code and overall folder structure from development is different in the production, as I had to adapt to the webhost's standards.
 - Both folders are available in this repo.
