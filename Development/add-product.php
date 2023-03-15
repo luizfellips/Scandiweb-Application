@@ -28,9 +28,9 @@
                 <label for="Price">Price ($)</label>
             </div>
             <div class="col inputs">
-                <input type="text" name="sku" required>
-                <input type="text" name="name" required>
-                <input type="number" name="price" step="any" required>
+                <input type="text" name="sku" id="sku" required>
+                <input type="text" name="name" id="name" required>
+                <input type="number" name="price" step="any" id="price" required>
             </div>
         </div>
 
