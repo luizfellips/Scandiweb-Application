@@ -7,9 +7,9 @@ class Furniture extends Product
     protected $width;
     protected $length;
 
-    function __construct($sku, $name, $price, $product_type, $height, $width, $length)
+    function __construct($sku, $name, $price, $height, $width, $length)
     {
-        parent::__construct($sku, $name, $price, $product_type);
+        parent::__construct($sku, $name, $price, 'Furniture');
         $this->height = $height;
         $this->width = $width;
         $this->length = $length;
@@ -47,22 +47,13 @@ class Furniture extends Product
     }
 
 
-    public function Save(){
-        $pdo = Connection::getConnection();
-        $sql = 'Insert into products(sku,name,price,product_type) values (:sku,:name,:price,:product_type); 
-                Insert into products_attributes(sku,height,width,length) values (:sku,:height,:width,:length)';
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':sku',$this->getSku());
-        $stmt->bindValue(':name',$this->getName());
-        $stmt->bindValue(':price',$this->getPrice());
-        $stmt->bindValue(':height',$this->getHeight());
-        $stmt->bindValue(':width',$this->getWidth());
-        $stmt->bindValue(':length',$this->getLength());
-        $stmt->bindValue(':product_type',$this->getProductType());
-        $stmt->execute();
-
-        
-    }
+   public function getAttributes(){
+    return [
+        'height' => $this->height,
+        'width' => $this-> width,
+        'length' => $this-> length
+    ];
+   }
 }
 
 ?>

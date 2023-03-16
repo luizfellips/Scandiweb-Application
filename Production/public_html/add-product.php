@@ -19,53 +19,20 @@ if (isset($_POST['sku']) && isset($_POST['name']) && isset($_POST['price']) && i
 
     // OOP APPROACH
 
-    $attributes =
-        [
-            'size' => $size,
-            'weight' => $weight,
-            'height' => $height,
-            'width' => $width,
-            'length' => $length
-        ];
-
-    try {
-        $product = ProductFactory::GenerateProduct($sku, $name, $price, $product_type, $attributes);
-        $product->Save();
-        
-        header("Location: index.php");
-        exit;
-
-    } catch (\Throwable $th) {
-        print_r($th);
-    }
-
-
-
-    // ARRAY APPROACH 
-
-    /* $products = [
-    'DVD' => ['class' => 'DVD', 'params' => [$size]],
-    'Book' => ['class' => 'Book', 'params' => [$weight]],
-    'Furniture' => ['class' => 'Furniture', 'params' => [$height, $width, $length]],
-    ];
-    try {
-    $object_params = array_merge
-    (
-    [$sku, $name, $price, $product_type],
-    array_map(function ($param) {
-    return $param; }, $products[$product_type]['params'])
+    $attributes = array_filter(array(
+        'size' => $size,
+        'weight' => $weight,
+        'height' => $height,
+        'width' => $width,
+        'length' => $length
+    )
     );
-    $product = new $products[$product_type]['class'](...$object_params);
-    $product->Save();
+
+    $product = ProductFactory::GenerateProduct($sku, $name, $price, $product_type, $attributes);
+    ProductFactory::Save($product);
     header("Location: index.php");
     exit;
-    
-    } catch (\Throwable $th) {
-    echo $th->getMessage();
-    }
-    */
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -128,13 +95,13 @@ if (isset($_POST['sku']) && isset($_POST['name']) && isset($_POST['price']) && i
 
         <div class="fieldbox" id="furniture_attributes">
             <p>Please provide the dimensions of the furniture.</p>
-            
+
             <label>Height(CM) <input type="text" name="height" id="height"></label>
-            
-            <label>Width(CM)  <input type="text" name="width" id="width"></label>
-           
+
+            <label>Width(CM) <input type="text" name="width" id="width"></label>
+
             <label>Length(CM) <input type="text" name="length" id="length"></label>
-            
+
         </div>
     </form>
 </body>

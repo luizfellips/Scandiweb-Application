@@ -16,6 +16,7 @@ abstract class Product{
     }
     
     // gets
+    abstract public function getAttributes();
     public function getSku(){
         return $this->sku;
     }
@@ -46,7 +47,6 @@ abstract class Product{
         $this->product_type = $product_type;
     }
 
-    abstract public function Save();
 }
 
 
