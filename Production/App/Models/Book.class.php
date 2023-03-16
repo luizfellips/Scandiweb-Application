@@ -3,9 +3,9 @@ class Book extends Product
 {
     protected $weight;
 
-    function __construct($sku, $name, $price, $product_type, $weight)
+    function __construct($sku, $name, $price, $weight)
     {
-        parent::__construct($sku, $name, $price, $product_type);
+        parent::__construct($sku, $name, $price, 'Book');
         $this->weight = $weight;
     }
     //gets 
@@ -20,18 +20,10 @@ class Book extends Product
         $this->weight = $weight;
     }
 
-    public function Save(){
-        $pdo = Connection::getConnection();
-        $sql = 'Insert into products(sku,name,price,product_type) values (:sku,:name,:price,:product_type); Insert into products_attributes(sku,weight) values (:sku,:weight)';
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':sku',$this->getSku());
-        $stmt->bindValue(':name',$this->getName());
-        $stmt->bindValue(':price',$this->getPrice());
-        $stmt->bindValue(':weight',$this->getWeight());
-        $stmt->bindValue(':product_type',$this->getProductType());
-        $stmt->execute();
-
-        
-    }
+    public function getAttributes(){
+        return [
+            'weight' => $this->getWeight()
+        ];
+       }
 
 }

@@ -3,9 +3,9 @@ class DVD extends Product
 {
     protected $size;
 
-    function __construct($sku, $name, $price, $product_type, $size)
+    function __construct($sku, $name, $price, $size)
     {
-        parent::__construct($sku, $name, $price, $product_type);
+        parent::__construct($sku, $name, $price, 'DVD');
         $this->size = $size;
     }
     //gets 
@@ -21,17 +21,9 @@ class DVD extends Product
     }
 
 
-    public function Save(){
-        $pdo = Connection::getConnection();
-        $sql = 'Insert into products(sku,name,price,product_type) values (:sku,:name,:price,:product_type); Insert into products_attributes(sku,size) values (:sku,:size)';
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':sku',$this->getSku());
-        $stmt->bindValue(':size',$this->getSize());
-        $stmt->bindValue(':name',$this->getName());
-        $stmt->bindValue(':price',$this->getPrice());
-        $stmt->bindValue(':product_type',$this->getProductType());
-        $stmt->execute();
-
-        
-    }
+    public function getAttributes(){
+        return [
+            'size' => $this->getSize()
+        ];
+       }
 }
