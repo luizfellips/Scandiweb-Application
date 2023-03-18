@@ -18,3 +18,6 @@ Live app:
 
 Along the code, I may have commented some parts which refer to different approaches(which might be more complex) to solve the same problem, given the restriction of if/else and switch/case.
 I hope this can help evaluate my programming skills, my will to learn and grow, and if I'm fit enough to join your team.
+
+Alternative repo with composer + namespaces:
+https://github.com/luizfellips/Scandiweb-Application-Test
